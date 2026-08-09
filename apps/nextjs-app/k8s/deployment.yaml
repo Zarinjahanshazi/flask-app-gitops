@@ -27,7 +27,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: nextjs-app
-          image: zarinshazi/nextjs-app:v2
+          image: zarinshazi/nextjs-app:4e99a4f
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
