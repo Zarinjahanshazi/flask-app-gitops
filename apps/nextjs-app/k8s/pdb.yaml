@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: nextjs-app
+  namespace: nextjs-app
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: nextjs-app

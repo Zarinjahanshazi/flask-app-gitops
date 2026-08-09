@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-basic-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Zarinjahanshazi/flask-app-gitops
+    targetRevision: main
+    path: apps/flask-basic-app/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: flask-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

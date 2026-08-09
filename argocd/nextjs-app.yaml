@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextjs-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Zarinjahanshazi/flask-app-gitops
+    targetRevision: main
+    path: apps/nextjs-app/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nextjs-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
