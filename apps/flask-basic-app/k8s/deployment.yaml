@@ -27,7 +27,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: flask-basic-app
-          image: zarinshazi/flask-basic-app:latest
+          image: zarinshazi/flask-basic-app:9cc4adf
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5007
